@@ -13,10 +13,12 @@
         <h2 class="mb-3">Student Information</h2>
         <div id="student-details">
         </div>
+        <button class="btn btn-primary" type="button" onclick="go_to_home()">메인화면으로</button>
     </div>
 </body>
 <script type="text/javascript">
-    var studentData = JSON.parse(localStorage.getItem("student_data"));
+    (function (){
+        var studentData = JSON.parse(localStorage.getItem("student_data"));
 
     if (studentData) {
         var studentDetails = document.getElementById("student-details");
@@ -31,6 +33,10 @@
         studentDetails.appendChild(detailsList);
     } else {
         studentDetails.innerHTML = "No student data available.";
+    }
+    })()
+    function go_to_home(){
+        window.location.href="index.html";
     }
 </script>
 </html>
