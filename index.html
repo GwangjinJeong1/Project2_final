@@ -53,12 +53,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr id="student 1" onclick="view_student('student 1')">
+                <tr id="student 1">
                     <td>1</td>
-                    <td>정광진</td>
-                    <td>21900651</td>
-                    <td>3학년</td>
-                    <td>전산전자공학부</td>
+                    <td><a onclick="view_student('student 1')">정광진</a></td>
+                    <td><a onclick="view_student('student 1')">21900651</a></td>
+                    <td><a onclick="view_student('student 1')">3학년</a></td>
+                    <td><a onclick="view_student('student 1')">전산전자공학부</a></td>
                     <td>
                         <a href="#" onclick="edit_student('student 1')">
                             <img src="assets/edit.png" width="20" height="20">
@@ -67,12 +67,12 @@
 
                     </td>
                 </tr>
-                <tr id="student 2" onclick="view_student('student 2')">
+                <tr id="student 2">
                     <td>2</td>
-                    <td>이광진</td>
-                    <td>22000651</td>
-                    <td>2학년</td>
-                    <td>경영경제학부</td>
+                    <td><a onclick="view_student('student 2')">이광진</a></td>
+                    <td><a onclick="view_student('student 2')">22000651</a></td>
+                    <td><a onclick="view_student('student 2')">2학년</a></td>
+                    <td><a onclick="view_student('student 2')">경영경제학부</a></td>
                     <td>
                         <a href="#" onclick="edit_student('student 2')">
                             <img src="assets/edit.png" width="20" height="20">
@@ -81,12 +81,12 @@
 
                     </td>
                 </tr>
-                <tr id="student 3" onclick="view_student('student 3')">
+                <tr id="student 3">
                     <td>3</td>
-                    <td>김광진</td>
-                    <td>22100651</td>
-                    <td>3학년</td>
-                    <td>생명공학부</td>
+                    <td><a onclick="view_student('student 3')">김광진</a></td>
+                    <td><a onclick="view_student('student 3')">22100651</a></td>
+                    <td><a onclick="view_student('student 3')">3학년</a></td>
+                    <td><a onclick="view_student('student 3')">생명공학부</a></td>
                     <td>
                         <a href="#" onclick="edit_student('student 3')">
                             <img src="assets/edit.png" width="20" height="20">
@@ -95,12 +95,12 @@
 
                     </td>
                 </tr>
-                <tr id="student 4" onclick="view_student('student 4')">
+                <tr id="student 4">
                     <td>4</td>
-                    <td>박광진</td>
-                    <td>22200651</td>
-                    <td>2학년</td>
-                    <td>법학부</td>
+                    <td><a onclick="view_student('student 4')">박광진</a></td>
+                    <td><a onclick="view_student('student 4')">22200651</a></td>
+                    <td><a onclick="view_student('student 4')">2학년</a></td>
+                    <td><a onclick="view_student('student 4')">법학부</a></td>
                     <td>
                         <a href="#" onclick="edit_student('student 4')">
                             <img src="assets/edit.png" width="20" height="20">
@@ -109,12 +109,12 @@
 
                     </td>
                 </tr>
-                <tr id="student 5" onclick="view_student('student 1')">
+                <tr id="student 5">
                     <td>5</td>
-                    <td>전광진</td>
-                    <td>22300651</td>
-                    <td>1학년</td>
-                    <td>글로벌리더십학부</td>
+                    <td><a onclick="view_student('student 5')">전광진</a></td>
+                    <td><a onclick="view_student('student 5')">22300651</a></td>
+                    <td><a onclick="view_student('student 5')">1학년</a></td>
+                    <td><a onclick="view_student('student 5')">글로벌리더십학부</a></td>
                     <td>
                         <a href="#" onclick="edit_student('student 5')">
                             <img src="assets/edit.png" width="20" height="20">
@@ -123,12 +123,12 @@
 
                     </td>
                 </tr>
-                <tr id="student 6" onclick="view_student('student 1')">
+                <tr id="student 6">
                     <td>6</td>
-                    <td>강광진</td>
-                    <td>21800651</td>
-                    <td>4학년</td>
-                    <td>기계공학부</td>
+                    <td><a onclick="view_student('student 6')">강광진</a></td>
+                    <td><a onclick="view_student('student 6')">21800651</a></td>
+                    <td><a onclick="view_student('student 6')">4학년</a></td>
+                    <td><a onclick="view_student('student 6')">기계공학부</a></td>
                     <td>
                         <a href="#" onclick="edit_student('student 6')">
                             <img src="assets/edit.png" width="20" height="20">
@@ -185,10 +185,7 @@
             alert("취소되었습니다.");
         }
     }
-    function view_student(studentId) {
-        window.location.href="view.html";
-    }
-    function edit_student(studentId) {
+    function store_data(studentId) {
         var student = document.getElementById(studentId);
         if (student) {
             var send_data = {
@@ -202,6 +199,14 @@
         } else {
             alert("No student in the list.");
         }
+    }
+    function view_student(studentId) {
+        store_data(studentId);
+        window.location.href="view.html";
+    }
+    function edit_student(studentId) {
+        store_data(studentId);
+        window.location.href="edit.html";
     }
     function go_to_add(){
         window.location.href="add.html";

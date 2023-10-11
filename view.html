@@ -9,10 +9,28 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-    view page
+    <div class="container">
+        <h2 class="mb-3">Student Information</h2>
+        <div id="student-details">
+        </div>
+    </div>
 </body>
 <script type="text/javascript">
-    
-</script>
+    var studentData = JSON.parse(localStorage.getItem("student_data"));
 
+    if (studentData) {
+        var studentDetails = document.getElementById("student-details");
+
+        var detailsList = document.createElement("ul");
+        for (var key in studentData) {
+            var listItem = document.createElement("li");
+            listItem.innerHTML = key + ": " + studentData[key];
+            detailsList.appendChild(listItem);
+        }
+
+        studentDetails.appendChild(detailsList);
+    } else {
+        studentDetails.innerHTML = "No student data available.";
+    }
+</script>
 </html>
